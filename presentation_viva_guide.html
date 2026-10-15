@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>IronMind AI — Presentation & Viva Defense Survival Guide</title>
+<style>
+  @page {
+    size: A4;
+    margin: 16mm 14mm 16mm 14mm;
+  }
+  body {
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+    color: #1e293b;
+    background: #ffffff;
+    line-height: 1.5;
+    font-size: 10.5pt;
+    margin: 0;
+    padding: 0;
+  }
+  .header {
+    background: linear-gradient(135deg, #0f172a, #134e4a);
+    color: #ffffff;
+    padding: 16px 20px;
+    border-radius: 8px;
+    margin-bottom: 18px;
+  }
+  .header h1 {
+    font-size: 20pt;
+    margin: 0 0 4px 0;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+  }
+  .header .tagline {
+    color: #2dd4bf;
+    font-size: 11pt;
+    font-weight: 600;
+    margin: 0;
+  }
+  .header .badge-bar {
+    margin-top: 8px;
+    font-size: 8.5pt;
+    color: #94a3b8;
+  }
+  h2 {
+    color: #0f172a;
+    font-size: 13.5pt;
+    font-weight: 700;
+    border-left: 4px solid #0d9488;
+    padding-left: 8px;
+    margin-top: 18px;
+    margin-bottom: 8px;
+    page-break-after: avoid;
+  }
+  h3 {
+    color: #0f766e;
+    font-size: 11pt;
+    font-weight: 600;
+    margin-top: 12px;
+    margin-bottom: 4px;
+    page-break-after: avoid;
+  }
+  p {
+    margin: 0 0 8px 0;
+    text-align: justify;
+  }
+  .speech-box {
+    background: #f0fdfa;
+    border: 2px solid #5eead4;
+    border-left: 6px solid #0d9488;
+    border-radius: 6px;
+    padding: 12px 14px;
+    margin: 10px 0;
+    font-size: 10pt;
+    color: #134e4a;
+    font-style: italic;
+    page-break-inside: avoid;
+  }
+  .step-card {
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    padding: 10px 12px;
+    margin: 8px 0;
+    page-break-inside: avoid;
+  }
+  .step-card strong {
+    color: #0f172a;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0 14px 0;
+    font-size: 9pt;
+    page-break-inside: avoid;
+  }
+  th {
+    background-color: #0f172a;
+    color: #ffffff;
+    font-weight: 600;
+    text-align: left;
+    padding: 7px 9px;
+    border: 1px solid #0f172a;
+  }
+  td {
+    padding: 6px 9px;
+    border: 1px solid #cbd5e1;
+    vertical-align: top;
+  }
+  tr:nth-child(even) td {
+    background-color: #f8fafc;
+  }
+  .qa-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #7c3aed;
+    border-radius: 6px;
+    padding: 10px 12px;
+    margin: 8px 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    page-break-inside: avoid;
+  }
+  .qa-q {
+    font-weight: 700;
+    color: #581c87;
+    margin-bottom: 4px;
+    font-size: 9.5pt;
+  }
+  .qa-a {
+    color: #334155;
+    font-size: 9pt;
+  }
+  .demo-step {
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-left: 4px solid #f59e0b;
+    border-radius: 6px;
+    padding: 9px 12px;
+    margin: 6px 0;
+    font-size: 9.5pt;
+    page-break-inside: avoid;
+  }
+  .page-break {
+    page-break-before: always;
+  }
+  ul, ol {
+    margin: 0 0 8px 0;
+    padding-left: 20px;
+  }
+  li {
+    margin-bottom: 3px;
+  }
+  .highlight {
+    background: #fef08a;
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>IronMind AI — Presentation & Viva Survival Guide</h1>
+  <div class="tagline">Quick Reference Cheat Sheet for Presentation & Project Evaluation</div>
+  <div class="badge-bar">Prepared for Academic Defense &bull; Live Mobile Demonstration &bull; Production Release v1.0.0</div>
+</div>
+
+<h2>🎯 Part 1: Your 30-Second Opening Speech</h2>
+<p>When the evaluators ask: <em>"Please introduce your project"</em>, deliver this exact speech:</p>
+<div class="speech-box">
+  "Good morning/afternoon, Sir/Madam.<br><br>
+  Our project is <strong>IronMind AI</strong> — an on-device, real-time AI biomechanical fitness coach and posture analysis platform.<br><br>
+  When individuals exercise without supervision, improper technique leads to severe joint strain and musculoskeletal injuries. Personal trainers are expensive, and wearable sensors are uncomfortable. IronMind AI solves this by turning any standard smartphone camera into an intelligent posture analyzer.<br><br>
+  Using <strong>Edge Computer Vision (Google BlazePose)</strong>, the app tracks <strong>33 anatomical 3D joints</strong> at 30+ FPS, calculates dynamic joint angles using trigonometry, filters optical noise with an EMA smoothing filter, counts repetitions via finite state machines, and provides instant audio-visual coaching cues — all while preserving 100% user privacy by keeping video processing entirely on the phone."
+</div>
+
+<h2>🧠 Part 2: How It Works in 3 Simple Steps</h2>
+<div class="step-card">
+  <strong>1. The Eyes (Vision):</strong> The smartphone camera captures video frames. The on-device BlazePose neural network predicts 33 3D coordinate keypoints $(X, Y, Z)$ across the body in sub-30ms without sending any video to the internet.
+</div>
+<div class="step-card">
+  <strong>2. The Brain (Math & Kinematics):</strong> The app calculates the exact interior angle between joints using <code>atan2</code> trigonometry (e.g. Hip &rarr; Knee &rarr; Ankle angle during squats). An <strong>Exponential Moving Average (EMA)</strong> filter ($\alpha = 0.18$) removes camera shake so optical jitter never causes false rep counts.
+</div>
+<div class="step-card">
+  <strong>3. The Coach (State Machine & Feedback):</strong> A multi-phase state machine tracks movement (e.g., <em>Standing &rarr; Descending &rarr; Bottom Hold &rarr; Ascending</em>). When full depth is reached with good spinal alignment, a repetition increments, and a Live Form Score (e.g., 94%) is displayed.
+</div>
+
+<h2>🛠️ Part 3: Technology Stack Summary</h2>
+<table>
+  <thead>
+    <tr>
+      <th style="width: 24%;">Component</th>
+      <th style="width: 26%;">Technology</th>
+      <th style="width: 50%;">Simple Explanation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Frontend (Mobile App)</strong></td>
+      <td>Flutter & Dart 3.x</td>
+      <td>Cross-platform UI framework with 60 FPS performance and dark Material 3 design.</td>
+    </tr>
+    <tr>
+      <td><strong>Edge AI Model</strong></td>
+      <td>Google ML Kit (BlazePose)</td>
+      <td>Lightweight deep learning model trained on COCO and GHUM 3D datasets for 33 3D landmarks.</td>
+    </tr>
+    <tr>
+      <td><strong>Kinematic Engine</strong></td>
+      <td>Custom Trigonometry & EMA</td>
+      <td>Mathematical engine for atan2 joint angles, noise smoothing, and baseline auto-calibration.</td>
+    </tr>
+    <tr>
+      <td><strong>Backend API</strong></td>
+      <td>Python 3.12 & FastAPI</td>
+      <td>Asynchronous REST API server handling user authentication, statistics, and workout sync.</td>
+    </tr>
+    <tr>
+      <td><strong>Database & Storage</strong></td>
+      <td>SQLite 3 + SharedPreferences</td>
+      <td><strong>Offline-First:</strong> Works without internet via phone storage, syncs to SQLite when online.</td>
+    </tr>
+    <tr>
+      <td><strong>Security</strong></td>
+      <td>PBKDF2-HMAC-SHA256</td>
+      <td>100,000 hashing rounds + 16-byte random salt to protect user passwords.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="page-break"></div>
+
+<h2>📱 Part 4: Step-by-Step Live Demo Script</h2>
+<p>Follow these exact steps when demonstrating the app on your phone:</p>
+
+<div class="demo-step">
+  <strong>Step 1: Open the App & Sign In</strong><br>
+  Open IronMind AI on the phone. Tap <em>"I already have an account"</em> and enter the demo credentials:<br>
+  &bull; <strong>Email:</strong> <code>demo@ironmind.ai</code> &bull; <strong>Password:</strong> <code>password123</code><br>
+  <em>(Point out to evaluators: "Notice how quickly authentication authenticates and loads user workout profiles.")</em>
+</div>
+
+<div class="demo-step">
+  <strong>Step 2: Show the Dashboard</strong><br>
+  Show the clean dark UI with 5 exercises: <strong>Squats, Push-ups, Lunges, Jumping Jacks, and Plank</strong>.<br>
+  <em>(Point out: "The dashboard displays daily streaks, targeted fitness goals, and personalized exercise recommendations.")</em>
+</div>
+
+<div class="demo-step">
+  <strong>Step 3: Start AI Camera Session (Squats)</strong><br>
+  Tap <strong>Squats</strong> &rarr; tap <strong>Start Camera Session</strong>. Step back 6–8 feet so your full body is visible.<br>
+  <em>(Point out: "The BlazePose model immediately tracks 33 landmarks and performs initial standing calibration.")</em>
+</div>
+
+<div class="demo-step">
+  <strong>Step 4: Perform 2 to 3 Squats</strong><br>
+  Perform a squat. Show the screen to the evaluators:<br>
+  &bull; The <strong>Rep Counter</strong> increments: <code>0 &rarr; 1 &rarr; 2</code>.<br>
+  &bull; The <strong>Form Score</strong> displays in real time: <code>94% - Excellent Form</code>.<br>
+  &bull; The <strong>Live Coach Cue</strong> shows: <code>"Good depth! Keep back straight."</code>
+</div>
+
+<div class="demo-step">
+  <strong>Step 5: Finish & Show Analytics</strong><br>
+  Tap the checkmark button to finish workout. Show the <strong>Workout Summary</strong> and <strong>Analytics Tab</strong> with historical progress charts and total volume.
+</div>
+
+<h2>🎓 Part 5: Top 8 Tough Viva Questions & Winning Answers</h2>
+
+<div class="qa-card">
+  <div class="qa-q">Q1: Why did you run the AI on the smartphone rather than a powerful cloud server?</div>
+  <div class="qa-a"><strong>Answer:</strong> Cloud streaming 30 FPS video introduces 150&ndash;300ms latency, which breaks real-time coaching cues. On-device inference delivers sub-30ms response times, works 100% offline, and ensures complete user privacy because raw camera frames never leave the phone.</div>
+</div>
+
+<div class="qa-card">
+  <div class="qa-q">Q2: What datasets were used to train the pose model?</div>
+  <div class="qa-a"><strong>Answer:</strong> The BlazePose model was trained on the <strong>COCO Keypoints Dataset</strong> (over 200k diverse real-world images for 2D keypoints) and the <strong>Google GHUM 3D Dataset</strong> (a generative 3D human shape dataset providing 3D depth and occlusion handling).</div>
+</div>
+
+<div class="qa-card">
+  <div class="qa-q">Q3: How does the system prevent camera shake from counting false reps?</div>
+  <div class="qa-a"><strong>Answer:</strong> We apply an <strong>Exponential Moving Average (EMA) filter</strong> ($\alpha = 0.18$) on calculated joint angles to filter optical jitter, combined with a 4-phase finite state machine that requires full range of motion before incrementing a rep.</div>
+</div>
+
+<div class="qa-card">
+  <div class="qa-q">Q4: How do you calculate joint angles in 3D?</div>
+  <div class="qa-a"><strong>Answer:</strong> Using the 2-argument arctangent formula <code>atan2(&Delta;y, &Delta;x)</code> between three consecutive anatomical landmarks (such as Hip, Knee, and Ankle), normalized between 0&deg; and 180&deg;.</div>
+</div>
+
+<div class="qa-card">
+  <div class="qa-q">Q5: What happens if there is no internet connection during a workout?</div>
+  <div class="qa-a"><strong>Answer:</strong> The app utilizes an <strong>offline-first architecture</strong>. It saves user sessions into Android <code>SharedPreferences</code> locally and synchronizes with the SQLite backend once network connectivity is re-established.</div>
+</div>
+
+<div class="qa-card">
+  <div class="qa-q">Q6: How do you adapt to different people's heights and limb lengths?</div>
+  <div class="qa-a"><strong>Answer:</strong> We implement an <strong>auto-calibration baseline phase</strong> that captures $N=30$ standing frames at the start of each session to dynamically adjust depth thresholds to individual body proportions.</div>
+</div>
+
+<div class="qa-card">
+  <div class="qa-q">Q7: How is user password security handled?</div>
+  <div class="qa-a"><strong>Answer:</strong> Passwords are never stored in plaintext. They are salted with a 16-byte cryptographic random salt and hashed using <strong>PBKDF2-HMAC-SHA256 with 100,000 iterations</strong>.</div>
+</div>
+
+<div class="qa-card">
+  <div class="qa-q">Q8: Can this app be deployed on other platforms?</div>
+  <div class="qa-a"><strong>Answer:</strong> Yes, we built a standalone 64-bit release APK (<code>app-release.apk</code>) that installs on any modern Android device, and also developed a pure Python (OpenCV + MediaPipe) desktop research edition.</div>
+</div>
+
+<div style="margin-top: 18px; text-align: center; font-size: 8pt; color: #94a3b8; border-top: 1px solid #e2e8f0; padding-top: 6px;">
+  IronMind AI Project Viva Guide &bull; Academic Year 2026 &bull; Production Ready
+</div>
+
+</body>
+</html>

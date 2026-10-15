@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>IronMind AI — Project Technical Documentation & Viva Guide</title>
+<style>
+  @page {
+    size: A4;
+    margin: 18mm 16mm 18mm 16mm;
+  }
+  body {
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+    color: #1a202c;
+    background: #ffffff;
+    line-height: 1.55;
+    font-size: 11pt;
+    margin: 0;
+    padding: 0;
+  }
+  .header {
+    border-bottom: 3px solid #0d9488;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+  }
+  .header h1 {
+    color: #0f172a;
+    font-size: 22pt;
+    margin: 0 0 6px 0;
+    font-weight: 800;
+  }
+  .header .tagline {
+    color: #0d9488;
+    font-size: 12pt;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+  }
+  .header .meta {
+    color: #64748b;
+    font-size: 9pt;
+  }
+  h2 {
+    color: #0f172a;
+    font-size: 14pt;
+    font-weight: 700;
+    border-left: 4px solid #0d9488;
+    padding-left: 10px;
+    margin-top: 22px;
+    margin-bottom: 10px;
+    page-break-after: avoid;
+  }
+  h3 {
+    color: #334155;
+    font-size: 11.5pt;
+    font-weight: 600;
+    margin-top: 14px;
+    margin-bottom: 6px;
+    page-break-after: avoid;
+  }
+  p {
+    margin: 0 0 10px 0;
+    text-align: justify;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0 18px 0;
+    font-size: 9.5pt;
+    page-break-inside: avoid;
+  }
+  th {
+    background-color: #0f172a;
+    color: #ffffff;
+    font-weight: 600;
+    text-align: left;
+    padding: 8px 10px;
+    border: 1px solid #0f172a;
+  }
+  td {
+    padding: 7px 10px;
+    border: 1px solid #cbd5e1;
+    vertical-align: top;
+  }
+  tr:nth-child(even) td {
+    background-color: #f8fafc;
+  }
+  .card {
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    padding: 12px 14px;
+    margin: 12px 0;
+    page-break-inside: avoid;
+  }
+  .formula-box {
+    background: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    border-left: 4px solid #059669;
+    border-radius: 4px;
+    padding: 10px 14px;
+    margin: 10px 0;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 10pt;
+    color: #065f46;
+    page-break-inside: avoid;
+  }
+  .qa-box {
+    background: #faf5ff;
+    border: 1px solid #e9d5ff;
+    border-left: 4px solid #9333ea;
+    border-radius: 4px;
+    padding: 10px 14px;
+    margin: 10px 0;
+    page-break-inside: avoid;
+  }
+  .qa-q {
+    font-weight: 700;
+    color: #581c87;
+    margin-bottom: 4px;
+  }
+  .qa-a {
+    color: #334155;
+    font-size: 9.5pt;
+  }
+  ul, ol {
+    margin: 0 0 10px 0;
+    padding-left: 22px;
+  }
+  li {
+    margin-bottom: 4px;
+  }
+  .page-break {
+    page-break-before: always;
+  }
+  .badge {
+    display: inline-block;
+    background: #0d9488;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 8pt;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>IronMind AI — Technical Project Manual & Guide Briefing</h1>
+  <div class="tagline">Real-Time Edge-AI Biomechanical Posture Coach & Kinematic Movement Analysis Platform</div>
+  <div class="meta"><strong>Architecture:</strong> Flutter (Dart 3.x) &bull; Google ML Kit (BlazePose) &bull; FastAPI (Python 3.12) &bull; SQLite 3 &bull; Standalone Python Prototype</div>
+</div>
+
+<h2>1. Executive Summary & Problem Statement</h2>
+<p>
+  <strong>IronMind AI</strong> addresses the critical issue of improper exercise form during unassisted workouts, which is the primary cause of musculoskeletal injuries and sub-optimal athletic progression. Conventional solutions require either expensive wearable sensory equipment or cloud-streamed video analysis that suffers from severe network latency (100–300ms) and compromises user visual privacy.
+</p>
+<p>
+  IronMind AI delivers an <strong>on-device, sub-30ms real-time computer vision platform</strong> that tracks 33 3D anatomical landmarks via Google ML Kit (BlazePose), computes trigonometric 3D joint angles using arctangent formulation, filters camera optical sensor jitter via Exponential Moving Average (EMA), and evaluates exercise phases through multi-state finite kinematic state machines.
+</p>
+
+<h2>2. Comprehensive Technology Stack</h2>
+<table>
+  <thead>
+    <tr>
+      <th style="width: 22%;">Layer</th>
+      <th style="width: 26%;">Technology</th>
+      <th style="width: 52%;">Role & Functional Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Mobile Frontend</strong></td>
+      <td>Flutter (Dart 3.x)</td>
+      <td>Cross-platform 60 FPS UI, Material 3 dark aesthetic, CameraX image stream processing, local state management.</td>
+    </tr>
+    <tr>
+      <td><strong>Edge Computer Vision</strong></td>
+      <td>Google ML Kit (BlazePose)</td>
+      <td>On-device 33 3D landmark regression neural network running on GPU/NPU delegates with zero cloud latency.</td>
+    </tr>
+    <tr>
+      <td><strong>Kinematics & Math</strong></td>
+      <td>Custom Biomechanical Engine</td>
+      <td>Trigonometric atan2 joint angle calculation, Exponential Moving Average (EMA) noise filtration, dynamic auto-calibration.</td>
+    </tr>
+    <tr>
+      <td><strong>Backend API</strong></td>
+      <td>FastAPI + Uvicorn (Python 3.12)</td>
+      <td>High-performance asynchronous REST API for user authentication, workout telemetry sync, and statistical aggregation.</td>
+    </tr>
+    <tr>
+      <td><strong>Database & Storage</strong></td>
+      <td>SQLite 3 + SharedPreferences</td>
+      <td><strong>Hybrid Offline-First Design:</strong> Local persistence via Android SharedPreferences + centralized indexed SQLite server.</td>
+    </tr>
+    <tr>
+      <td><strong>Security</strong></td>
+      <td>PBKDF2-HMAC-SHA256</td>
+      <td>100,000 hashing iterations with 16-byte cryptographically secure random salt and Bearer session tokens.</td>
+    </tr>
+    <tr>
+      <td><strong>Secondary Prototype</strong></td>
+      <td>Pure Python (OpenCV + MediaPipe)</td>
+      <td>Standalone desktop vision testbed and Android Buildozer packaging configuration.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>3. Machine Learning Architecture & Dataset Origin</h2>
+<p>
+  The system utilizes Google's <strong>BlazePose</strong> 3D pose estimation neural network, structured as a two-stage cascaded pipeline:
+</p>
+<ul>
+  <li><strong>Stage 1 (Detector Network):</strong> A lightweight convolutional detector (MobileNet backbone) scans the video frame to localize the human body bounding box and key orientation points (hips, shoulders).</li>
+  <li><strong>Stage 2 (Landmark Regression Network):</strong> The cropped region of interest (ROI) is passed to a deep landmark regression model that predicts <strong>33 3D keypoints</strong> $(X, Y, Z)$ normalized between $[0.0, 1.0]$, alongside a visibility score.</li>
+</ul>
+
+<div class="card">
+  <strong>Training Datasets:</strong>
+  <ul>
+    <li><strong>COCO Keypoints Dataset:</strong> Utilized for 2D keypoint pre-training across over 200,000 in-the-wild annotated human images under diverse lighting, clothing, angles, and background variations.</li>
+    <li><strong>Google GHUM 3D Dataset:</strong> A high-fidelity generative 3D human shape and kinematic dataset that enables the model to accurately estimate spatial depth ($Z$-axis) and resolve self-occlusion (e.g., limb crossing).</li>
+  </ul>
+</div>
+
+<div class="page-break"></div>
+
+<h2>4. Biomechanical & Mathematical Formulations</h2>
+
+<h3>A. 3D Joint Angle Calculation ($\text{atan2}$)</h3>
+<p>For any 3 consecutive joint landmarks $A$ (proximal), $B$ (vertex), and $C$ (distal):</p>
+<div class="formula-box">
+  &theta; = | atan2(C<sub>y</sub> - B<sub>y</sub>, C<sub>x</sub> - B<sub>x</sub>) - atan2(A<sub>y</sub> - B<sub>y</sub>, A<sub>x</sub> - B<sub>x</sub>) | &times; (180&deg; / &pi;)<br>
+  if &theta; &gt; 180&deg; &rarr; &theta; = 360&deg; - &theta;
+</div>
+
+<h3>B. Temporal Smoothing via Exponential Moving Average (EMA)</h3>
+<p>To eliminate optical noise and sensor jitter from triggering false repetitions:</p>
+<div class="formula-box">
+  S<sub>t</sub> = &alpha; &times; X<sub>t</sub> + (1 - &alpha;) &times; S<sub>t-1</sub><br>
+  where &alpha; = 0.18 for squats / lunges and &alpha; = 0.25 for push-ups.
+</div>
+
+<h3>C. Dynamic Baseline Auto-Calibration</h3>
+<p>
+  The system samples $N = 30$ standing baseline frames before active reps to determine individual limb lengths, standing hip height, and shoulder width, dynamically customizing descent, depth, and return thresholds per user.
+</p>
+
+<h2>5. Supported Exercise Kinematics</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Exercise</th>
+      <th>Primary Joints Tracked</th>
+      <th>Form Validation Rules</th>
+      <th>State Machine Phases</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Squats</strong></td>
+      <td>Hip &rarr; Knee &rarr; Ankle</td>
+      <td>Knee angle &lt; 100&deg; (depth), Back angle &gt; 45&deg;, Knees tracking over toes</td>
+      <td>STANDING &rarr; DESCENDING &rarr; BOTTOM_HOLD &rarr; ASCENDING &rarr; COMPLETE</td>
+    </tr>
+    <tr>
+      <td><strong>Push-ups</strong></td>
+      <td>Shoulder &rarr; Elbow &rarr; Wrist</td>
+      <td>Elbow angle &lt; 90&deg; at bottom, Spine/hip straightness &approx; 180&deg;</td>
+      <td>UP &rarr; DESCENDING &rarr; BOTTOM &rarr; ASCENDING &rarr; COMPLETE</td>
+    </tr>
+    <tr>
+      <td><strong>Lunges</strong></td>
+      <td>Hip &rarr; Knee &rarr; Ankle</td>
+      <td>Front knee &approx; 90&deg;, Rear knee near ground, Torso upright</td>
+      <td>START &rarr; LUNGING &rarr; DEEP_LUNGE &rarr; RETURN</td>
+    </tr>
+    <tr>
+      <td><strong>Jumping Jacks</strong></td>
+      <td>Shoulder Abduction & Ankle Span</td>
+      <td>Shoulder angle &gt; 140&deg; at peak, Feet span wider than shoulder width</td>
+      <td>REST &rarr; PEAK_JUMP &rarr; RETURN &rarr; COMPLETE</td>
+    </tr>
+    <tr>
+      <td><strong>Plank</strong></td>
+      <td>Shoulder &rarr; Hip &rarr; Ankle</td>
+      <td>Continuous core alignment (160&deg;&ndash;180&deg;); timer pauses on back sagging</td>
+      <td>ALIGNMENT &rarr; HOLDING &rarr; PAUSED &rarr; COMPLETE</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>6. Backend, Database & Offline-First Architecture</h2>
+<ul>
+  <li><strong>SQLite 3 Schema:</strong> Dedicated tables for <code>users</code>, <code>profiles</code>, and <code>workouts</code> with B-Tree indices on <code>users(email)</code>, <code>workouts(user_id)</code>, and <code>workouts(completed_at)</code>.</li>
+  <li><strong>Security:</strong> PBKDF2-HMAC-SHA256 with 100,000 iterations + 16-byte cryptographic salt per user.</li>
+  <li><strong>Offline-First Resilience:</strong> Client immediately writes workout metrics to Android <code>SharedPreferences</code>. If network is unavailable, the user can seamlessly exercise and sync upon reconnecting.</li>
+</ul>
+
+<div class="page-break"></div>
+
+<h2>7. Guide & Viva Defense Q&A Cheatsheet</h2>
+
+<div class="qa-box">
+  <div class="qa-q">Q1: Why did you choose Edge-AI / On-Device ML instead of sending video to a cloud server?</div>
+  <div class="qa-a"><strong>Answer:</strong> Cloud video streaming requires 30 FPS high-bandwidth upload, creating 150&ndash;300ms latency that ruins real-time audio-visual feedback. Edge computing provides sub-30ms response time, functions 100% offline, and guarantees complete user privacy because raw camera frames never leave the smartphone.</div>
+</div>
+
+<div class="qa-box">
+  <div class="qa-q">Q2: How does the system prevent camera jitter and shaky hands from counting false reps?</div>
+  <div class="qa-a"><strong>Answer:</strong> We implement an Exponential Moving Average (EMA) filter with &alpha; = 0.18 on calculated joint angles to smooth out optical noise, paired with a 4-phase finite state machine that enforces full range-of-motion completion before incrementing reps.</div>
+</div>
+
+<div class="qa-box">
+  <div class="qa-q">Q3: How are joint angles calculated in 3D space?</div>
+  <div class="qa-a"><strong>Answer:</strong> Using the 2-argument arctangent function <code>atan2(&Delta;y, &Delta;x)</code> between three consecutive anatomical landmarks (e.g., Hip, Knee, Ankle), computing the interior vector angle normalized between 0&deg; and 180&deg;.</div>
+</div>
+
+<div class="qa-box">
+  <div class="qa-q">Q4: What happens if the user's phone disconnects from the Wi-Fi or backend?</div>
+  <div class="qa-a"><strong>Answer:</strong> The app utilizes an offline-first architecture. It caches athlete profiles and workout sessions locally in Android <code>SharedPreferences</code> and synchronizes with the SQLite database via REST API once network connectivity is restored.</div>
+</div>
+
+<div class="qa-box">
+  <div class="qa-q">Q5: How is user data and password security handled?</div>
+  <div class="qa-a"><strong>Answer:</strong> Passwords are never stored in plaintext. They are salted with a 16-byte cryptographically secure random salt and hashed using PBKDF2-HMAC-SHA256 with 100,000 iterations before storage in SQLite.</div>
+</div>
+
+<div style="margin-top: 24px; text-align: center; font-size: 8.5pt; color: #94a3b8; border-top: 1px solid #e2e8f0; padding-top: 8px;">
+  IronMind AI Project Documentation &bull; Academic Year 2026 &bull; Production Release v1.0.0
+</div>
+
+</body>
+</html>

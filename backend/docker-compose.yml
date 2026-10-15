@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  backend:
+    build: .
+    container_name: ironmind_backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./ironmind.db:/app/ironmind.db
+    restart: always

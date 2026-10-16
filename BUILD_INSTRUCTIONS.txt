@@ -1,0 +1,6 @@
+cd /d D:\FlutterProjects\ironmind_ai #YOUR STORAGE PATH 
+flutter pub get 
+flutter build apk
+
+This generates the Android APK build output, usually under:
+build\app\outputs\flutter-apk\app-release.apk
